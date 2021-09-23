@@ -1,5 +1,4 @@
 node{
-    tools {nodejs "nodejs"}
     stage('Checkout SCM'){
         git branch:'master',url:'https://github.com/shreyadey16/sample-angular1.git'
     }
