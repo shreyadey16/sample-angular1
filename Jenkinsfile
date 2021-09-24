@@ -1,11 +1,19 @@
-node{
-    stage('Checkout SCM'){
-        git branch:'master',url:'https://github.com/shreyadey16/sample-angular1.git'
+pipeline {
+    agent any
+    tools{
+        nodejs 'NodeJS'
     }
-    stage('Install node modules'){
-        sh "npm install"
-    }
-    stage("Build"){
-        sh "npm run build --prod"
+
+    stages {
+        stage('scm') {
+            steps {
+                git branch:'master',url:'https://github.com/shreyadey16/sample-angular1.git'
+            }
+        }
+         stage('install') {
+            steps {
+                sh 'npm install'
+            }
+        }
     }
 }
