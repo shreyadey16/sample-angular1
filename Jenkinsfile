@@ -1,5 +1,7 @@
 pipeline {
-    agent any
+  agent {
+    label 'agent'
+  }
     tools{
         nodejs 'NodeJS'
       dockerTool 'docker'
@@ -23,8 +25,8 @@ pipeline {
     }
         stage('Build Docker Image'){
           steps{
-script{
-docker.withTool('docker'){
+            script{
+               docker.withTool('docker'){
                sh 'docker version'
                sh 'docker build -t  ang-app .'
                sh 'docker tag ang-app shreyadey16/ang-app'
