@@ -41,5 +41,10 @@ pipeline {
         }
     } 
     }
+      stage("Push Image to Docker Hub"){
+        steps{
+        sh 'docker push  shreyadey16/jen-docker-ang:ang-app'
     }
+    }
+  }
 }
