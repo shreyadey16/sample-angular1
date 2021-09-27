@@ -6,7 +6,7 @@ FROM node:latest as build
 WORKDIR /usr/local/app
 
 # Add the source code to app
-COPY sample-angular1 /usr/local/app/
+COPY ./ /usr/local/app/
 
 # Install all the dependencies
 RUN npm install
