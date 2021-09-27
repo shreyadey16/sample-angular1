@@ -25,7 +25,6 @@ pipeline {
             steps{
                sh 'docker version'
                sh 'docker build -t  ang-app .'
-               sh 'docker image list'
                sh 'docker tag ang-app shreyadey16/ang-app:ang-app'
             }
           }
