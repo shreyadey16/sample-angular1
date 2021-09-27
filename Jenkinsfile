@@ -23,7 +23,7 @@ pipeline {
     }
         stage('Build Docker Image'){
             steps{
-               sh 'docker build -t  shreyadey16/image:abc .'
+               sh 'docker build -t  shreyadey16/ang-prac-image .'
             }
           }
     }
