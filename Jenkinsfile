@@ -34,5 +34,10 @@ pipeline {
           }
           }
         }
+      stage("Docker Login"){
+        withCredentials([string(credentialsId: 'DOCKER_HUB_PASSWORD', variable: 'PASSWORD')]) {
+            sh 'docker login -u shreyadey16 -p $PASSWORD'
+        }
+    } 
     }
 }
