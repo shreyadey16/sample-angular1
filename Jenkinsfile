@@ -23,6 +23,7 @@ pipeline {
     }
         stage('Build Docker Image'){
             steps{
+               sh 'service docker start'
                sh 'docker build -t  shreyadey16/ang-prac-image .'
             }
           }
