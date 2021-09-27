@@ -22,11 +22,15 @@ pipeline {
         }
     }
         stage('Build Docker Image'){
-            steps{
+          steps{
+script{
+docker.withTool('docker'){
                sh 'docker version'
                sh 'docker build -t  ang-app .'
-               sh 'docker tag ang-app shreyadey16/ang-app:ang-app'
+               sh 'docker tag ang-app shreyadey16/ang-app'
             }
           }
+          }
+        }
     }
 }
