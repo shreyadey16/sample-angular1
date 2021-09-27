@@ -15,5 +15,15 @@ pipeline {
                 sh 'npm install'
             }
         }
+          stage('Build'){
+	         steps{
+                sh 'npm run build --prod'
+        }
+    }
+        stage('Build Docker Image'){
+            steps{
+               sh 'docker build -t shreyadey16/ang-app-image .'
+            }
+          }
     }
 }
