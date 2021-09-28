@@ -46,5 +46,13 @@ pipeline {
         sh 'docker push  shreyadey16/ang-app'
     }
     }
+      stage("Run Container on Dev Server"){
+        steps{
+        def dockerRun='docker run -p 8080:8080 -d --name ang-app shreyadey16/ang-app'
+        sshagent(['dev-server']) {
+          sh "ssh -o StrictHostKeyChecking=no ec2-user@3.92.18.98 ${dockerRun}"
+      }
+    }
   }
+ }
 }
