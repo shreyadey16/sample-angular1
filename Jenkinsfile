@@ -1,5 +1,5 @@
+def dockerRun='docker run -p 8080:8080 -d --name ang-app shreyadey16/ang-app'
 pipeline {
- def dockerRun='docker run -p 8080:8080 -d --name ang-app shreyadey16/ang-app'
   agent {
     label 'agent'
   }
